@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +35,13 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/profile-create', 'store');
         Route::get('/profile/@me', 'index');
         Route::post('/profile-update', 'update');
+    });
+
+    Route::controller(PaymentController::class)->group(function() {
+        Route::get('/pricing-plans', 'getPricingPlans');
+        Route::post('/user/subscribe', 'createSubscription');
+        Route::post('/checkout', 'checkout');
+        Route::get('/checkout/success', 'checkoutSuccess');
+        Route::post("/create-payment-intent", "createPaymentIntent");
     });
 });
