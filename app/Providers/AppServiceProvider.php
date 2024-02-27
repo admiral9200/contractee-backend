@@ -20,6 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Cashier::calculateTaxes(); // enable automatic tax calculation...
+        // Cashier::calculateTaxes(); // enable automatic tax calculation...
     }
 }

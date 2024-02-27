@@ -15,7 +15,7 @@ class PricingPlanSeeder extends Seeder
     {
         DB::table("pricing_plans")->insert([
             'mode' => 'primary',
-            'amount' => 8,
+            'amount' => 0,
             'currency' => 'USD'
         ]);
 
