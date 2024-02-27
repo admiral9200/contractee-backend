@@ -43,5 +43,12 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/checkout', 'checkout');
         Route::get('/checkout/success', 'checkoutSuccess');
         Route::post("/create-payment-intent", "createPaymentIntent");
+        Route::post("/setup-subscription", "setupSubscription");
+        Route::post("/create-free-trials", "createFreeTrials");
+        Route::get("/check-subscription-status", "checkSubscriptionStatus");
     });
 });
+
+Route::get('/test', function () {
+    return "test";
+})->name('test');
